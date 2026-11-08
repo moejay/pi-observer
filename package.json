@@ -1,0 +1,54 @@
+{
+  "name": "pi-observer",
+  "version": "1.0.0",
+  "description": "A quiet, read-only session observer for Pi: efficiency, confusion, and goal alignment.",
+  "license": "MIT",
+  "author": "moejay",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moejay/pi-observer.git"
+  },
+  "homepage": "https://moejay.github.io/pi-observer/",
+  "bugs": {
+    "url": "https://github.com/moejay/pi-observer/issues"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run build:site",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build:site": "node scripts/build-site.mjs",
+    "prepack": "npm run check"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=1.5.0 <2",
+    "@earendil-works/pi-tui": ">=1.5.0 <2"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.5.0",
+    "@earendil-works/pi-tui": "*",
+    "@types/node": "^24.0.0",
+    "prettier": "3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

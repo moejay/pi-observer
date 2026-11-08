@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible problem using sanitized examples.
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not upload real session files, credentials, or private tool output.
+        Use synthetic examples. Report security issues privately.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Pi Observer, Pi, Node.js, operating system, and terminal.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include commands, relevant settings, and expected versus actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Sanitized example
+      description: Optional synthetic messages or error text. Never include secrets.
